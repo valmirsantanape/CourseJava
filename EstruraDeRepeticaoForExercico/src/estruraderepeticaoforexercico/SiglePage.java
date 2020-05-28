@@ -62,7 +62,6 @@ public class SiglePage extends javax.swing.JFrame {
 
         jLabel3.setText("Razão");
 
-        txtr.setEnabled(false);
         txtr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtrActionPerformed(evt);
@@ -140,16 +139,16 @@ public class SiglePage extends javax.swing.JFrame {
         
         int an, r;
         an = Integer.parseInt(txtan.getText());
-        //r = Integer.parseInt(txtr.getText());
+        r = Integer.parseInt(txtr.getText());
         
-        //int soma = Integer.parseInt(txta1.getText());
+        int soma = 0;
          
-        for(int i =Integer.parseInt(txta1.getText()); i <=an; i++){
-            lblresultado.setText(String.valueOf(i));
-            
+        for(int i =Integer.parseInt(txta1.getText()); i <=an; i+= r){
+            //lblresultado.setText(String.valueOf(i));
+            soma = soma + i;
         }
         //System.out.println(soma);
-        //lblresultado.setText(String.valueOf(soma));
+        lblresultado.setText(String.valueOf(soma));
         
         
         
