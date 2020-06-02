@@ -13,6 +13,7 @@ public class CurrencyConverter {
     
     
     public static double IOF = 0.06;
+    
     public static double dolarToReal(double amount, double dolarprice){
         return amount*dolarprice*(1+IOF);
     }
