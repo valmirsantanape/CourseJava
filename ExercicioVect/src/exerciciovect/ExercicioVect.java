@@ -43,7 +43,7 @@ public class ExercicioVect {
         for (int i=0; i<10; i++) {
             if (vect[i] != null) {
             System.out.println(i + " Nome: " + vect[i].getNome());
-            System.out.println("Email: " + vect.getClass());
+            System.out.println("Email: " + vect[i].getEmail());
             }
         }
         sc.close();
