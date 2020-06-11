@@ -39,9 +39,11 @@ public class ExercicioVect {
         }
         System.out.println();
         System.out.println("Busy rooms:");
+        
         for (int i=0; i<10; i++) {
             if (vect[i] != null) {
-            System.out.println(i + ": " + vect[i]);
+            System.out.println(i + " Nome: " + vect[i].getNome());
+            System.out.println("Email: " + vect.getClass());
             }
         }
         sc.close();
