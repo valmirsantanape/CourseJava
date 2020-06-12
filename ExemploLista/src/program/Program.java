@@ -52,7 +52,12 @@ public class Program {
         List<String> result = list.stream().filter(x -> x.charAt(0) == 'A').collect(Collectors.toList());
         for(String x : result){
             System.out.println(x);
+            
         }
+        System.out.println("-----------------------------------------");
+        String nome = list.stream().filter(x -> x.charAt(0)== 'J').findFirst().orElse(null);
+        System.out.println(nome);
+        
     }
 
     
