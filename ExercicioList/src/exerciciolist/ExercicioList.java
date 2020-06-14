@@ -67,6 +67,7 @@ public class ExercicioList {
             System.out.println("Id:" + obj.getId());
             System.out.println("Funcionário: " + obj.getNome());
             System.out.println("Salario: " + obj.getSalario());
+            System.out.println("---------------------------------");
         }
         sc.close();
    }     
