@@ -23,10 +23,12 @@ public class DateIntroduct {
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyy");
         SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyy HH:mm:ss");
         
-        Date y1 = sdf1.parse("25/06/2018");
-        Date y2 = sdf2.parse("25/06/2018 15:42:07");
-        System.out.println(y1);
-        System.out.println(y2);
+        Date dateagora = new Date();
+        
+        
+        
+        System.out.println("Data atual: "+ sdf2.format(dateagora));
+        
     };
     
     
