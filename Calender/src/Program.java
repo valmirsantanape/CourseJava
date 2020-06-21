@@ -16,6 +16,8 @@ import java.util.Date;
  */
 public class Program {
     public static void main(String[] args) {
+        
+        //SimpledateFormate para dá uma formatação ideal de acordo com sua localidade
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");
         
         Date d = Date.from(Instant.parse("2020-06-20T21:42:07Z"));
