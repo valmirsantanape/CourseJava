@@ -8,6 +8,13 @@
  *
  * @author camila
  */
-public class SalveConta {
+public class SalveConta extends Conta{
+
+    public SalveConta() {
+    }
+
+    public SalveConta(int numero, String nome, double saldo) {
+        super(numero, nome, saldo);
+    }
     
 }
