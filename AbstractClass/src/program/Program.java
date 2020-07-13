@@ -52,6 +52,6 @@ public class Program {
             soma += acc.getSaldo();
         }
         
-        System.out.println("Saldo total " + soma);
+        System.out.println("Saldo total atualizado " + soma);
     }
 }
