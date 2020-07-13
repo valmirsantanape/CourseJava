@@ -9,6 +9,28 @@ package entidades;
  *
  * @author valmi
  */
-public class ContaPoupanca {
+public class ContaPoupanca extends Conta {
+    
+    private double taxajuros;
+    
+    public ContaPoupanca(){
+        super();
+    }
+
+    public ContaPoupanca(int numero, String nome, double saldo, double taxajuros ) {
+        super(numero, nome, saldo);
+        this.taxajuros = taxajuros;
+    }
+    
+    public double pegarTaxa(){
+        return taxajuros;
+    }
+    public void mudarTaxa(double taxajuros){
+        this.taxajuros = taxajuros;
+    }
+    public void atualizarSaldo(){
+        saldo = saldo + saldo * taxajuros;
+    }
+    
     
 }
