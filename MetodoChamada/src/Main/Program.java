@@ -19,14 +19,26 @@ public class Program {
     
     
     public static void main(String[] args) {
-      
-        metodo2();
+        metodo1();
+       
        
         
         
     }
+    public static void metodo1(){
+        
+        System.out.println("Incio do metodo 1");
+        metodo2();
+        System.out.println("Fim do metodo 1");
+    
+    }
+
+    
+    
     public static void metodo2(){
-         Scanner sc = new Scanner(System.in);
+        System.out.println("Inicio do  metodo 2");
+
+        Scanner sc = new Scanner(System.in);
         try {
             String[] vect = sc.nextLine().split(" ");
             int posicao = sc.nextInt();
@@ -35,11 +47,14 @@ public class Program {
         }
         catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Posicao invalida. ");
+            e.printStackTrace();
+            sc.next();
         }
         catch(InputMismatchException e){
             System.out.println("Input error");
             
         }
+        System.out.println("Fim do metodo 2");
         
         System.out.println("Fim da execução");
         
