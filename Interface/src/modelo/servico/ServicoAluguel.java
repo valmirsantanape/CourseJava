@@ -13,22 +13,25 @@ import entidades.Fatura;
  * @author valmi
  */
 public class ServicoAluguel {
-    private Double precoHora;
     private Double precoDia;
+    private Double precoHora;
     
     private BrasilServico taxaBrasilServico;
 
-    public ServicoAluguel(Double precoHora, Double precoDia, BrasilServico taxaBrasilServico) {
-        this.precoHora = precoHora;
+    public ServicoAluguel(Double precoDia, Double precoHora, BrasilServico taxaBrasilServico) {
         this.precoDia = precoDia;
+        this.precoHora = precoHora;
         this.taxaBrasilServico = taxaBrasilServico;
     }
+    
     
     public void processoAluguel(AluguelCarro alguelCarro){
         long t1 = alguelCarro.getInicio().getTime();
         long t2 = alguelCarro.getFim().getTime();
         
-        double horas = (double) (t2 - t1)/100/60/60;
+    
+        double horas = (double) (t2 - t1)/1000/60/60;
+        
         
         double pagamentoBasico;
         if( horas <= 12){
@@ -40,6 +43,7 @@ public class ServicoAluguel {
         double taxa = taxaBrasilServico.taxa(pagamentoBasico);
         
         alguelCarro.setFatura(new Fatura(pagamentoBasico, taxa));
+        //Operacao reponsavel por gerar a nota de pagamento
     }
     
 }
