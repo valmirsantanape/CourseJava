@@ -9,14 +9,7 @@ package modelo.servico;
  *
  * @author valmi
  */
-public class BrasilServico implements TaxaServico{
-    public double taxa(double valor){
-        
-        if(valor <= 100){
-            return valor * 0.2;
-        }
-        else{
-            return valor * 0.15;
-        }
-    }
+public interface TaxaServico {
+    double taxa(double valor);
+    
 }

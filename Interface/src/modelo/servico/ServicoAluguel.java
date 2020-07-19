@@ -16,12 +16,12 @@ public class ServicoAluguel {
     private Double precoDia;
     private Double precoHora;
     
-    private BrasilServico taxaBrasilServico;
+    private TaxaServico taxaServico;
 
-    public ServicoAluguel(Double precoDia, Double precoHora, BrasilServico taxaBrasilServico) {
+    public ServicoAluguel(Double precoDia, Double precoHora, TaxaServico taxaBrasilServico) {
         this.precoDia = precoDia;
         this.precoHora = precoHora;
-        this.taxaBrasilServico = taxaBrasilServico;
+        this.taxaServico = taxaServico;
     }
     
     
@@ -40,7 +40,7 @@ public class ServicoAluguel {
             pagamentoBasico = Math.ceil(horas / 24) * precoDia;
         }
         
-        double taxa = taxaBrasilServico.taxa(pagamentoBasico);
+        double taxa = taxaServico.taxa(pagamentoBasico);
         
         alguelCarro.setFatura(new Fatura(pagamentoBasico, taxa));
         //Operacao reponsavel por gerar a nota de pagamento
