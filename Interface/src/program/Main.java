@@ -40,13 +40,17 @@ public class Main{
         System.out.println("Entre com preço por dia: ");
         double precoDia = sc.nextDouble();
         
-            ServicoAluguel servicoAluguel = new ServicoAluguel(precoHora, precoDia, new BrasilServico());
+            ServicoAluguel servicoAluguel = new ServicoAluguel(precoDia, precoHora, new BrasilServico());
             
             servicoAluguel.processoAluguel(cr);
             
             System.out.println("Fatura: ");
-            //Falta Concluir a impressao do valores na fatura
-        
+            System.out.println("Pagamento Basico: " + String.format("%.2f", cr.getFatura().getPagamentoBasico()));
+            System.out.println("Taxa: " + String.format("%.2f", cr.getFatura().getTaxa()));
+            System.out.println("Pagamento total: " + String.format("%.2f", cr.getFatura().getPagamentoTotal()));
+            
+            
+            
         sc.close();
         } 
             

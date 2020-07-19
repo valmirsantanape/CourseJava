@@ -41,7 +41,7 @@ public class Fatura {
         this.taxa = taxa;
     }
     
-    public Double buscarValorTotal(){
+    public Double getPagamentoTotal(){
         return getPagamentoBasico() + getTaxa();
     }
 }
