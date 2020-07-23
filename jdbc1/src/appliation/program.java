@@ -5,8 +5,10 @@
  */
 package appliation;
 
-import java.sql.Connection;
-import db.DB;
+import db.ConnectionFactory;
+
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -14,7 +16,16 @@ import db.DB;
  */
 public class program {
     public static void main(String[] args) {
-        Connection conn = DB.getConnection();
-        DB.closeConnection();
+        
+        try {
+            ConnectionFactory con = new ConnectionFactory();
+        con.getConnection();
+        
+        JOptionPane.showMessageDialog(null, "Conectado!");
+        } catch (Exception e) {
+            
+          JOptionPane.showMessageDialog(null, "Conectado! " + e);  
+        }
+        
     }
 }
