@@ -35,12 +35,15 @@ public class Program {
         ConnectionFactory conn = new ConnectionFactory();
         
         conn.getConnection();
-        
         String sql = "select * from department";
+        
+      
+        
      
-        PreparedStatement stmt;
-        stmt = conn.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
+        Statement st;
+        stmt = conn.createStatement(sql);
+        ResultSet rs;
+            rs = st.executeQuery();
             
         
         while(rs.next()){
@@ -50,7 +53,7 @@ public class Program {
             JOptionPane.showMessageDialog(null, "Faha ao conectar com bano de dados " + e);
             
         }
-        
+        //EXERCCIO INCOMPLETO
     }
     
 }
