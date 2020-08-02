@@ -1,12 +1,10 @@
 package application;
 
 
-import com.mysql.cj.xdevapi.Statement;
 import java.sql.PreparedStatement;
 import db.ConnectionFactory;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
