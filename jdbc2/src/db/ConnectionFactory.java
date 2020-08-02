@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 public class ConnectionFactory {
     public Connection getConnection(){
         try {
-            return (Connection) DriverManager.getConnection("jdbc:mysql://localhost/coursejdbc?useTimezone=true&serverTimezone=UTC","root","");
+            return (Connection) DriverManager.getConnection("jdbc:mysql://localhost/coursejdbc?useTimezone=true&serverTimezone=UTC","root","12345");
         } catch (SQLException e) {
             //throw new RuntimeException(e);
             JOptionPane.showMessageDialog(null, "Falha na conexao " + e);

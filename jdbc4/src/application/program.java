@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,34 +27,35 @@ public class program {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Connection con;
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        String sql = "insert into seller "
-                + "(Name, Email, BirthDate, BaseSalary, DepartmentId)"
-                + "values(?,?,?,?,?)";
+        Connection con = new ConnectionFactory().getConnection();
         
-        con = new ConnectionFactory().getConnection();
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        
+        String sql = "UPDATE seller"
+                + "SET BaseSalary = BaseSalary + ? "
+                + "WHERE "
+                + "(DepartmentId = ?)";
         
         try {
-            PreparedStatement stmt;
-            stmt = con.prepareStatement(sql);
             
-            stmt.setString(1, "Carl Purple");
-            stmt.setString(2, "Carl@gmail.com");
-            stmt.setDate(3, new java.sql.Date(sdf.parse("22/04/1985").getTime()));
-            stmt.setDouble(4, 3000);
-            stmt.setInt(5, 4);
+            PreparedStatement stmt = con.prepareStatement(sql);
             
-            int rowsAffected = stmt.executeUpdate();
-            System.out.println("Done! Linhas alteradas: " + rowsAffected);
+            stmt.setDouble(1, 200);
+            stmt.setInt(2, 2);
             
+            int linhaAlteradas = stmt.executeUpdate();
+            
+            System.out.println("Pronto! Linhas alteradas: " + linhaAlteradas);
+        
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        catch(ParseException e){
-            e.printStackTrace();
-        }
+        
+        
+        
+        
+        
+        
         
         
     }
