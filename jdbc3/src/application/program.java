@@ -1,6 +1,7 @@
 package application;
 
 
+import com.mysql.cj.xdevapi.Statement;
 import java.sql.PreparedStatement;
 import db.ConnectionFactory;
 
@@ -37,9 +38,7 @@ public class program {
         
         try {
             PreparedStatement stmt;
-            stmt = con.prepareStatement("insert into seller "
-                    + "(Name, Email, BirthDate, BaseSalary, DepartmentId)"
-                    + "values(?,?,?,?,?)");
+            stmt = con.prepareStatement(sql);
             
             stmt.setString(1, "Carl Purple");
             stmt.setString(2, "Carl@gmail.com");
@@ -48,19 +47,8 @@ public class program {
             stmt.setInt(5, 4);
             
             int rowsAffected = stmt.executeUpdate();
-            //System.out.println("Done! Linhas alteradas: " + rowsAffected);
-            if(rowsAffected > 0){
-                ResultSet rs = stmt.getGeneratedKeys();
-                while(rs.next()){
-                    int id = rs.getInt(1);
-                    System.out.println("Pronto! ID = " + id);
-                }
-                
-            }else{
-                System.out.println("Nenhuma linha foi alterada");
-
-            }
-            System.out.println("");
+            System.out.println("Done! Linhas alteradas: " + rowsAffected);
+            
         }
         catch (SQLException e) {
             e.printStackTrace();
