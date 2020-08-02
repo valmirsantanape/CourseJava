@@ -26,13 +26,13 @@ public class program {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Connection con;
+        Connection con = new ConnectionFactory().getConnection();;
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String sql = "insert into seller "
                 + "(Name, Email, BirthDate, BaseSalary, DepartmentId)"
                 + "values(?,?,?,?,?)";
         
-        con = new ConnectionFactory().getConnection();
+        
         
         try {
             PreparedStatement stmt;

@@ -36,6 +36,8 @@ public class program {
                 + "WHERE "
                 + "(DepartmentId = ?)";
         
+        //BaseSalary, DepartmentId
+        
         try {
             
             PreparedStatement stmt = con.prepareStatement(sql);
